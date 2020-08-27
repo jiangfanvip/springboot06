@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<br>
+<h1>success</h1>
+
+<div th:text="${userPass}">success</div>    <!-- 会转义，直接显示标签-->
+<div th:utext="${userPass}">success</div>  <!-- 不会转义，直接解析标签-->
+
+
+
+<div id="div1" class="haha" th:id="${userName}" th:class="${userName}" th:text="${userName}">你好</div>
+<!--tr直接遍历lists.size()个,th:each在哪个元素组件 上就遍历哪一个 -->
+<tr th:text="${item2}" th:each="item2:${lists}"></tr>
+</br>
+
+<tr >
+    <!--td直接遍历lists.size()个,th:each在哪个元素组件 上就遍历哪一个,item 集合里每一个元素 -->
+    <td th:each="item:${lists}">[[${item}]]</td>  <!--[[${item}]] 输入字符串-->
+</tr>
+
+
+</body>
+</html>
